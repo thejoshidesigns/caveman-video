@@ -43,8 +43,7 @@ def export_fcpxml(edl: dict, out_path: Path, width: int = 1920, height: int = 10
         aid = f"r{idx}"
         idx += 1
         asset_ids[key] = aid
-        abs_p = str(Path(src_path).resolve())
-        uri = "file://" + quote(abs_p)
+        uri = Path(src_path).resolve().as_uri()
         asset = ET.SubElement(
             resources, "asset",
             id=aid, name=key, start="0s", duration="360000/100s",
@@ -58,8 +57,7 @@ def export_fcpxml(edl: dict, out_path: Path, width: int = 1920, height: int = 10
         aid = f"r{idx}"
         idx += 1
         overlay_ids.append((aid, ov))
-        abs_p = str(Path(ov["file"]).resolve())
-        uri = "file://" + quote(abs_p)
+        uri = Path(ov["file"]).resolve().as_uri()
         asset = ET.SubElement(
             resources, "asset",
             id=aid, name=Path(ov["file"]).stem, start="0s",
