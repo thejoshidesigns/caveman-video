@@ -1,0 +1,8 @@
+description = "Run shrunk ffprobe inventory and pack word-level transcripts into takes_packed.md and captions.tsv."
+prompt = """
+Run `cavecrew-prober` workflow on target: {{args}}
+1. Probe all media files in 1-line caveman format (no raw ffprobe JSON dump).
+2. Check/run cached verbatim word-level transcription in `edit/transcripts/`.
+3. Run `helpers/pack_transcripts.py --edit-dir edit` to produce `edit/takes_packed.md`, `edit/words_timed.txt`, and `edit/captions.tsv`.
+4. Output compact `edit/MANIFEST.md`.
+"""

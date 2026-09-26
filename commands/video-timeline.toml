@@ -1,0 +1,5 @@
+description = "Export non-destructive Final Cut Pro XML (.fcpxml) and OpenTimelineIO (.otio) for DaVinci Resolve, Final Cut, and Premiere."
+prompt = """
+Activate `timeline-and-storyboards` and run `helpers/export_timeline.py` on: {{args}}
+Generate rational frame-accurate `edit/timeline.fcpxml` (v1.10) and `edit/timeline.otio` with primary storyline cuts, connected overlay lanes, audio lanes, and beat markers.
+"""

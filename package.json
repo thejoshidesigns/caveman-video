@@ -1,0 +1,29 @@
+{
+  "name": "@caveman-video/cli",
+  "version": "1.0.0",
+  "description": "why use many token when few frame do trick. Caveman skill pack, subagents, native CoreGraphics compositor, NLE timeline exporter, and token-shrinking MCP server for AI video editing.",
+  "type": "module",
+  "bin": {
+    "caveman-video": "./bin/install.js"
+  },
+  "scripts": {
+    "install-global": "node ./bin/install.js --global",
+    "install-workspace": "node ./bin/install.js --workspace",
+    "status": "node ./bin/install.js --status",
+    "mcp-video-shrink": "node ./src/mcp-servers/video-shrink/index.js"
+  },
+  "keywords": [
+    "caveman",
+    "video-editing",
+    "ffmpeg",
+    "motion-graphics",
+    "remotion",
+    "hyperframes",
+    "manim",
+    "fcpxml",
+    "opentimelineio",
+    "mcp",
+    "ai-agent-skills"
+  ],
+  "license": "MIT"
+}

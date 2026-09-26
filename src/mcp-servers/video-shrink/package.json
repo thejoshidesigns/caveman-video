@@ -1,0 +1,13 @@
+{
+  "name": "@caveman-video/video-shrink-mcp",
+  "version": "1.0.0",
+  "description": "Context-shrinking MCP server for AI video editing (compresses ffprobe, Whisper transcripts, contact sheets, and FFmpeg logs by 95%)",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "video-shrink-mcp": "./index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

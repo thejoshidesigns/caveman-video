@@ -1,0 +1,87 @@
+{
+  "version": "1.0.0",
+  "repository": "caveman-video",
+  "description": "Caveman token-compressed AI video editing, motion graphics, audio mastering, and NLE timeline skill pack.",
+  "skills": [
+    {
+      "name": "caveman-video",
+      "path": "skills/caveman-video/SKILL.md",
+      "role": "master-router",
+      "consolidates": [
+        "JuliusBrussee/caveman",
+        "video-use (core rules & router)"
+      ]
+    },
+    {
+      "name": "cut-and-sync",
+      "path": "skills/cut-and-sync/SKILL.md",
+      "role": "domain",
+      "consolidates": [
+        "video-use (cutting & packed transcripts)",
+        "beat-sync-editing",
+        "lyrics-to-video",
+        "youtube-transcript"
+      ]
+    },
+    {
+      "name": "motion-direction",
+      "path": "skills/motion-direction/SKILL.md",
+      "role": "domain",
+      "consolidates": [
+        "motion-art-direction",
+        "animation-principles",
+        "shot-composition",
+        "color-motion",
+        "design-taste-frontend (taste-skill)"
+      ]
+    },
+    {
+      "name": "native-and-recut-overlays",
+      "path": "skills/native-and-recut-overlays/SKILL.md",
+      "role": "domain",
+      "consolidates": [
+        "hey-siya native macOS CoreGraphics/CoreText pipeline (render_siya.m)",
+        "talking-head-recut",
+        "logo-animation",
+        "motion-background"
+      ]
+    },
+    {
+      "name": "programmatic-engines",
+      "path": "skills/programmatic-engines/SKILL.md",
+      "role": "domain",
+      "consolidates": [
+        "remotion-video",
+        "hyperframes",
+        "hyperframes-core",
+        "hyperframes-animation",
+        "hyperframes-keyframes",
+        "hyperframes-creative",
+        "hyperframes-cli",
+        "hyperframes-registry",
+        "hyperframes-studio",
+        "manim-video",
+        "motion",
+        "after-effects"
+      ]
+    },
+    {
+      "name": "audio-and-media-os",
+      "path": "skills/audio-and-media-os/SKILL.md",
+      "role": "domain",
+      "consolidates": [
+        "media-use",
+        "hyperframes-audio"
+      ]
+    },
+    {
+      "name": "timeline-and-storyboards",
+      "path": "skills/timeline-and-storyboards/SKILL.md",
+      "role": "domain",
+      "consolidates": [
+        "screenplay-storyboards",
+        "fcpxml-otio-nle-export"
+      ]
+    }
+  ]
+}

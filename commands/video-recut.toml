@@ -1,0 +1,7 @@
+description = "Package a talking-head or demo video with Hey Siya native CoreGraphics overlays or HyperFrames graphic cards."
+prompt = """
+Activate `native-and-recut-overlays` + `motion-direction` on target: {{args}}
+1. Probe footage and read `edit/takes_packed.md` + `edit/captions.tsv`.
+2. Emit the 5-Line Caveman Strategy Gate (Tone Matrix, Taste Dials, Engine choice: Native macOS CoreGraphics `.m` pipe vs. HyperFrames HTML/GSAP deck, scene count, and word-synced caption style).
+3. On confirmation, generate `--preview` stills + contact sheet first, inspect for overlap/clipping, then render full `bt709` MP4.
+"""

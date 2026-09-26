@@ -1,0 +1,8 @@
+description = "Audit a rendered video with contact sheet, cut-boundary waveform check, black-frame detection, and bt709 verification."
+prompt = """
+Run `cavecrew-qc` workflow on: {{args}}
+1. Verify duration, resolution, fps, and `bt709` tags via `ffprobe`.
+2. Check for black frames (`blackdetect`) and cut boundary audio pops (`helpers/timeline_view.py`).
+3. Build and inspect `contact_sheet.png` for Rule 1 subtitle occlusion, text clipping, or safe-zone violations.
+4. Report 1 line per finding (`HH:MM:SS.mm: 🔴/🟡 <issue>. <fix>.`) or `LGTM: ✅`.
+"""

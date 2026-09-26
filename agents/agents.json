@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "crew": [
+    {
+      "name": "cavecrew-prober",
+      "role": "Media & Transcript Investigator",
+      "file": "agents/cavecrew-prober.md"
+    },
+    {
+      "name": "cavecrew-director",
+      "role": "Edit & Motion Director",
+      "file": "agents/cavecrew-director.md"
+    },
+    {
+      "name": "cavecrew-animator",
+      "role": "Parallel Slot & Compositor Builder",
+      "file": "agents/cavecrew-animator.md"
+    },
+    {
+      "name": "cavecrew-qc",
+      "role": "Render & Timeline Auditor",
+      "file": "agents/cavecrew-qc.md"
+    }
+  ]
+}

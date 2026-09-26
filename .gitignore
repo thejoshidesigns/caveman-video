@@ -1,0 +1,11 @@
+node_modules/
+build/
+edit/
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.aac
+.DS_Store
+__pycache__/
+*.pyc
