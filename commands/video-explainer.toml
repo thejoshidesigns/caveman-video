@@ -1,0 +1,13 @@
+description = "Record a browser walkthrough or polish a screen recording with Screen-Studio auto-zoom, cursor ripples, window chrome, keystroke HUDs, and step callouts."
+prompt = """
+Activate `caveman-video` + `screen-and-explainer` skill packs.
+
+Target input / URL: {{args}}
+
+Execute the Screen-Studio Explainer pipeline in Caveman telemetry mode:
+1. Present the 5-Line Strategy Gate (`Goal`, `Engine`, `Canvas`, `Audio`, `Steps`).
+2. If input is a URL (`http://` or `https://`), create `edit/walkthrough.json` and run `node helpers/record_browser.mjs --plan edit/walkthrough.json -o edit/raw_screen.mp4` (or `--interactive` if live user walkthrough requested).
+3. If input is an existing `.mp4`/`.mov` screen recording, probe it and author `edit/cursor_events.json` with click/spotlight/keystroke coordinates and timestamps.
+4. Run mandatory keyframe preview gate: `python3 helpers/render_screen_studio.py <video> --events edit/cursor_events.json --preview` and visually inspect `edit/preview_frames/*.png`.
+5. Render final explainer MP4 with `python3 helpers/render_screen_studio.py <video> --events edit/cursor_events.json -o output_explainer.mp4`.
+"""

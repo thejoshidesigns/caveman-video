@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": "caveman-video",
-  "description": "Caveman token-compressed AI video editing, motion graphics, audio mastering, and NLE timeline skill pack.",
+  "description": "Caveman token-compressed AI video editing, motion graphics, browser walkthrough & Screen-Studio explainers, audio mastering, and NLE timeline skill pack.",
   "skills": [
     {
       "name": "caveman-video",
@@ -44,6 +44,17 @@
         "talking-head-recut",
         "logo-animation",
         "motion-background"
+      ]
+    },
+    {
+      "name": "screen-and-explainer",
+      "path": "skills/screen-and-explainer/SKILL.md",
+      "role": "domain",
+      "consolidates": [
+        "playwright-browser-walkthrough-recorder (record_browser.mjs)",
+        "screen-studio-auto-zoom-compositor (render_screen_studio.py)",
+        "macos-avfoundation-screen-capture",
+        "cursor-ripple-spotlight-keystroke-hud"
       ]
     },
     {

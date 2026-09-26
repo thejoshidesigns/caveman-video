@@ -75,6 +75,21 @@ const TOOLS = [
       },
       required: ["edl_json", "output_path"]
     }
+  },
+  {
+    name: "video_screen_studio",
+    description:
+      "Render a raw screen/browser recording + cursor_events.json into a Screen-Studio explainer video (spring auto-zoom on clicks, macOS window chrome, cursor ripples, keystroke HUDs) with 1-line telemetry.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        video_path: { type: "string", description: "Input screen recording MP4/MOV path." },
+        events_json: { type: "string", description: "Path to cursor_events.json." },
+        output_path: { type: "string", description: "Output explainer MP4 path." },
+        preview: { type: "boolean", description: "Generate keyframe PNG previews instead of full video." }
+      },
+      required: ["video_path", "events_json"]
+    }
   }
 ];
 
@@ -167,6 +182,21 @@ function handleToolCall(name, args = {}) {
         "--grade",
         args.grade || "none"
       ];
+      return execFileSync("python3", cmdArgs, { encoding: "utf8" }).trim();
+    }
+    if (name === "video_screen_studio") {
+      const script = path.join(HELPERS_DIR, "render_screen_studio.py");
+      const cmdArgs = [
+        script,
+        path.resolve(args.video_path),
+        "--events",
+        path.resolve(args.events_json)
+      ];
+      if (args.preview) {
+        cmdArgs.push("--preview");
+      } else if (args.output_path) {
+        cmdArgs.push("-o", path.resolve(args.output_path));
+      }
       return execFileSync("python3", cmdArgs, { encoding: "utf8" }).trim();
     }
     return `ERR: Unknown tool ${name}`;

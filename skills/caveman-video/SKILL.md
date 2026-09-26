@@ -95,6 +95,7 @@ Pick the lightest, fastest engine that fits the deliverable, then read **only** 
 | **3. Remotion (`npx remotion`)** | React/TypeScript programmatic video, Zod-typed parametric templates, data-driven batch rendering, or `@remotion/three` 3D scenes. | [`programmatic-engines`](../programmatic-engines/SKILL.md) + [`motion-direction`](../motion-direction/SKILL.md) |
 | **4. Manim CE (`manim`)** | 3Blue1Brown-style mathematical derivations, LaTeX equations, algorithm walkthroughs, and formal architecture diagrams. | [`programmatic-engines`](../programmatic-engines/SKILL.md) |
 | **5. Surgical FFmpeg + NLE XML/OTIO (`render_edl.py` & `export_timeline.py`)** | Multi-take talking-head rough cuts, beat-synced montages, vocal-timed lyric videos, color grading, and exporting editable `.fcpxml` / `.otio` timelines for DaVinci Resolve, Premiere Pro, or Final Cut Pro. | [`cut-and-sync`](../cut-and-sync/SKILL.md) + [`timeline-and-storyboards`](../timeline-and-storyboards/SKILL.md) + [`audio-and-media-os`](../audio-and-media-os/SKILL.md) |
+| **6. Browser Walkthrough + Screen-Studio Auto-Zoom (`record_browser.mjs` & `render_screen_studio.py`)** | **Product demos, SaaS explainers, and browser screen recordings** with automated Playwright/interactive browser capture (`cursor_events.json`), spring-eased auto-zoom on clicks, rounded macOS window chrome, cursor click ripples, UI spotlights, and keystroke HUD pills (`⌘ + K`). | [`screen-and-explainer`](../screen-and-explainer/SKILL.md) + [`audio-and-media-os`](../audio-and-media-os/SKILL.md) |
 
 ---
 

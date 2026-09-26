@@ -72,29 +72,32 @@ node bin/install.js --status
 * `/caveman-video [lite|full|ultra|off]` — Toggle Caveman-Video terse mode & enforce the 15 Hard Rules.
 * `/video-probe <dir_or_file>` — Run shrunk `ffprobe` inventory + cached Scribe/Whisper transcription → `edit/takes_packed.md` & `edit/captions.tsv`.
 * `/video-recut <video>` — Package a talking-head / demo video with **Hey Siya**-style native CoreGraphics overlays or HyperFrames HTML/GSAP graphic cards.
+* `/video-explainer <url_or_screen_recording>` — Record an automated/interactive browser walkthrough (`record_browser.mjs`) or polish a screen recording with **Screen-Studio auto-zoom on clicks**, macOS window chrome, cursor ripples, UI spotlights, and keystroke HUDs (`render_screen_studio.py`).
 * `/video-timeline <edl_or_storyboard.json>` — Export non-destructive `.fcpxml` (Final Cut Pro / DaVinci Resolve / Premiere Pro) and `.otio` timelines.
 * `/video-qc <rendered.mp4>` — Run `--preview` contact sheet + `timeline_view.py` boundary waveform check + `ffprobe` verification.
 
 ---
 
-## 📦 The 7 Skill Packs (`skills/`)
+## 📦 The 8 Skill Packs (`skills/`)
 
 | Skill | Consolidates | What It Does |
 | :--- | :--- | :--- |
-| **`caveman-video`** | `caveman` + `video-use` (Core) | Master entry point: terse caveman prose rules, **5-Line Strategy Gate**, **15 Production Hard Rules**, and **5-Engine Router**. |
+| **`caveman-video`** | `caveman` + `video-use` (Core) | Master entry point: terse caveman prose rules, **5-Line Strategy Gate**, **15 Production Hard Rules**, and **6-Engine Router**. |
 | **`cut-and-sync`** | `video-use` + `beat-sync-editing` + `lyrics-to-video` + `youtube-transcript` | Audio-first word-boundary cutting, 30–200ms padding, BPM-to-frame grid math (`(60/BPM)*fps`), `Establish → Develop → Climax → Resolve` pacing arc, J/L/match cuts, speed ramps, and 2–3 visual cuts per musical interlude. |
 | **`motion-direction`** | `motion-art-direction` + `animation-principles` + `shot-composition` + `color-motion` + `taste-skill` | Brief inference, Anti-Slop Taste Dials (`VARIANCE / MOTION / DENSITY`), Tone Matrix & 4 Personalities (`Playful`, `Premium`, `Corporate`, `Energetic`), 3 Motion Layers (`Hero / Support / Texture`), 1/3 Rule, 12-col & `9:16` safe-zone restacking, OKLCH palettes, and `bt709` color management. |
 | **`native-and-recut-overlays`** | **Hey Siya** `render_siya.m` + `talking-head-recut` + `logo-animation` + `motion-background` | **Dual Overlay Engine:** (1) Native macOS Objective-C / CoreGraphics / CoreText RGBA pipe compositor (`render_*.m` → `ffmpeg`) with `--preview` stills, glass cards, dark hero intercuts, brand bug, and word-synced pill captions; (2) HyperFrames HTML/GSAP `data-anim` card recuts, SVG stroke draw-on logo stings, and seamless periodic backgrounds. |
+| **`screen-and-explainer`** | `record_browser.mjs` + `render_screen_studio.py` + `avfoundation` | **Browser Walkthrough & Screen-Studio Engine:** Scripted or interactive Playwright browser recording with timestamped `cursor_events.json` logging, spring-eased camera auto-zoom & pan on clicks (with anti-seasick click clustering), rounded macOS window chrome + traffic lights, cursor click ripples, UI spotlight cutouts, and keystroke HUD pills (`⌘ + K`). |
 | **`programmatic-engines`** | `remotion-video` + `hyperframes-*` + `manim-video` + `motion` + `after-effects` | Deterministic code-driven video: Remotion (`useCurrentFrame`, `interpolate`, `spring`, `remotion still` verify loop), HyperFrames (`window.__timelines`, `npx hyperframes check/render`), Manim CE (3Blue1Brown math/algorithms), `motion/react`, and After Effects expressions/`.mogrt`/`.jsx`. |
 | **`audio-and-media-os`** | `media-use` + `hyperframes-audio` | One-verb asset resolution (`bgm`, `sfx`, `image`, `icon`, `logo`, `voice`, `grade`, `lut`), proactive Media Opportunity Scan, dynamic voiceover EQ carve (`400Hz / 1kHz / 1.6kHz`), 30ms cut `afade`s, and EBU R128 `-14 LUFS` loudness mastering. |
 | **`timeline-and-storyboards`** | `screenplay-storyboards` + NLE Export | Non-destructive `.fcpxml` (DaVinci Resolve / Final Cut / Premiere) & `.otio` timeline generation + screenplay-to-16:9 monochrome triptych storyboard sheets (`3840×2160`) and `storyboards.pdf`. |
 
 ---
 
-## ⚙️ The 5 Rendering Engines
+## ⚙️ The 6 Rendering Engines
 
 1. **Native macOS CoreGraphics + CoreText Pipe (`helpers/templates/render_native_template.m`)** — Compiles in `0.5s` via `clang -O3 -framework Cocoa`. Pipes raw RGBA frames at `60–120+ fps` directly into `ffmpeg` with zero browser overhead, crisp Apple CoreText Unicode/Indic shaping, glassmorphic cards, full-screen intercuts, and `--preview` keyframe PNGs.
-2. **HyperFrames (`npx hyperframes`)** — Browser-native deterministic HTML/CSS/GSAP video compositions, Web Audio `data-fx-carve`, and `talking-head-recut` card decks.
-3. **Remotion (`npx remotion`)** — React/TypeScript compositions with Zod schemas, `@remotion/three`, and headless `remotion still` → `remotion render` verification.
-4. **Manim Community Edition (`manim`)** — 3Blue1Brown-style mathematical, algorithmic, and system architecture animations.
-5. **Surgical FFmpeg + NLE XML/OTIO (`helpers/render_edl.py` & `helpers/export_timeline.py`)** — Frame-accurate multi-take extraction, 30ms audio fades, lossless concat, and instant `.fcpxml` / `.otio` handoff to DaVinci Resolve, Premiere Pro, or Final Cut Pro.
+2. **Browser Walkthrough + Screen-Studio Auto-Zoom (`helpers/record_browser.mjs` & `helpers/render_screen_studio.py`)** — Records live or scripted browser sessions alongside exact `(x, y, t)` cursor/click telemetry and renders smooth spring-eased camera zooms, rounded macOS window chrome, click ripples, UI spotlights, and keystroke HUDs (`⌘ + K`).
+3. **HyperFrames (`npx hyperframes`)** — Browser-native deterministic HTML/CSS/GSAP video compositions, Web Audio `data-fx-carve`, and `talking-head-recut` card decks.
+4. **Remotion (`npx remotion`)** — React/TypeScript compositions with Zod schemas, `@remotion/three`, and headless `remotion still` → `remotion render` verification.
+5. **Manim Community Edition (`manim`)** — 3Blue1Brown-style mathematical, algorithmic, and system architecture animations.
+6. **Surgical FFmpeg + NLE XML/OTIO (`helpers/render_edl.py` & `helpers/export_timeline.py`)** — Frame-accurate multi-take extraction, 30ms audio fades, lossless concat, and instant `.fcpxml` / `.otio` handoff to DaVinci Resolve, Premiere Pro, or Final Cut Pro.
