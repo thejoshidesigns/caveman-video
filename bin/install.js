@@ -45,7 +45,12 @@ function copyOrLinkSkill(skillName, targetSkillsRoot, useSymlink = true) {
   }
 
   if (useSymlink) {
-    fs.symlinkSync(src, dest, "dir");
+    try {
+      const type = process.platform === "win32" ? "junction" : "dir";
+      fs.symlinkSync(src, dest, type);
+    } catch {
+      fs.cpSync(src, dest, { recursive: true });
+    }
   } else {
     fs.cpSync(src, dest, { recursive: true });
   }
